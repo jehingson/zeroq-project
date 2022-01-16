@@ -69,7 +69,7 @@ const CommandContainer = styled.div`
     overflow-x:hidden;
     max-width: 1310px;
     gap: 10px;
-    margin: auto auto;
+    margin: 0 auto;
     width: 97%;
     display: flex;
     flex-wrap: wrap;

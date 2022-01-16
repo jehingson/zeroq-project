@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 import Command from '../Command';
+import CommandHero from '../Command/CommandHero';
 
 const LogoZeroq = "https://zeroq.cl/command/img/logo.png"
+
+
 
 function Header() {
     return (
@@ -15,6 +18,7 @@ function Header() {
             <HeaderDown>
                 <Command />
             </HeaderDown>
+            <CommandHero />
 
         </HeaderContainer>
     )
@@ -39,7 +43,7 @@ height: 61px;
 `
 const HeaderDown = styled.div`
     background-color: #2D4E83;
-    min-height: 60px;
+    min-height: 50px;
     padding: 10px 0;
     height: 100%;
     position: relative;
