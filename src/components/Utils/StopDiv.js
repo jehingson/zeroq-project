@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Zoom from '@mui/material/Zoom';
 import styled from 'styled-components';
+import OfficesContext from '../../Context/OfficesContext'
 
 
 function StopDiv() {
+    const { setStep } = useContext(OfficesContext)
     const [step1, setStep1] = useState(true);
     const [step2, setStep2] = useState(false);
     const [step3, setStep3] = useState(false);
+
+    useEffect(() => {
+        if (step1) {
+            setStep('online')
+        }
+        if (step2) {
+            setStep('all')
+        }
+        if (step3) {
+            setStep('offline')
+        }
+    }, [step1, step2, step3])
 
 
     const handleStep1 = () => {

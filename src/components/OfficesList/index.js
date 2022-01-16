@@ -8,8 +8,6 @@ import Office from './Office';
 function OfficesList() {
     const { loading, offices } = useOffices()
 
-
-
     if (loading) return (<Loaging />)
     return (
         <OfficesListContainer>

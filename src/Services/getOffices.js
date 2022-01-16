@@ -1,9 +1,9 @@
 import { API_URL } from './settings'
 
-export default async function getOffices() {
+export default async function getOffices({ search = '', step = '' }) {
     const apiURL = API_URL
     const res = await fetch(apiURL)
-    const data = await res.json()
+    let data = await res.json()
     if (Array.isArray(data)) {
         if (data.length) {
             data.forEach((result) => {
@@ -23,7 +23,19 @@ export default async function getOffices() {
                 result.waiting = waiting
                 result.elapsed = `${parseInt(hours)}:${parseInt(minutes)}:${parseInt(seconds)}`
             })
-            data.sort((a, b) => a.online - b.online)
+            data.sort((a, b) => b.online - a.online)
+            if (
+                search.length
+                && search !== ' '
+                && search !== '  ') {
+                data = data.filter((itm) => itm.name === search)
+            }
+            if (step === 'online') {
+                data = data.filter((itm) => itm.online)
+            }
+            if (step === 'offline') {
+                data = data.filter((itm) => !itm.online)
+            }
         }
         console.log('sss', data)
         return data

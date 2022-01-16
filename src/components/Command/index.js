@@ -1,5 +1,5 @@
 import { Search } from '@mui/icons-material';
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -7,18 +7,35 @@ import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 import { styled as MuiStaled } from '@mui/material/styles';
 import StopDiv from '../Utils/StopDiv';
+import OfficesContext from '../../Context/OfficesContext';
 
 function Command() {
     const [filter, setFilter] = useState('');
     const [filterTwo, setFilterTwo] = useState('')
+    const [keyword, setKeywords] = useState('')
+    const { setSearch } = useContext(OfficesContext)
 
+    const handleSubmit = e => {
+        e.preventDefault()
+        //navegation router
+        setSearch(keyword)
+
+    }
+    const handleChange = e => {
+        //navegation router
+        console.log('eee', e.target.value)
+        setKeywords(e.target.value)
+
+    }
 
 
     return (
         <CommandContainer>
             <ContentSearch>
                 <Search />
-                <input placeholder="Buscar Sucursales" />
+                <form onSubmit={handleSubmit}>
+                    <input placeholder="Buscar Sucursales" value={keyword} onChange={handleChange} />
+                </form>
             </ContentSearch>
             <ContentFilter>
                 <FormControl>
@@ -86,16 +103,21 @@ const ContentSearch = styled.div`
         color: #666;
         padding: 8px;
     }
-    >input {
+    >form{
+        height:33px;
+        width:83%;
+        > input {
         outline: 0;
         border: none;
         font-size: 14px;
         color: #444;
         font-weight: 500;
         line-height: 21px;
-        height:33px;
+        height:30px;
         width:83%;
     }
+    }
+   
 `
 
 const ContentFilter = styled.div`
