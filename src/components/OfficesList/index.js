@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
+import { useOffices } from '../../Hooks/useOffices';
+import Loaging from '../Utils/Loaging';
+import Office from './Office';
+
 
 function OfficesList() {
+    const { loading, offices } = useOffices()
+
+
+
+    if (loading) return (<Loaging />)
     return (
         <OfficesListContainer>
-            hola mundo
+            {
+                offices.map(ofc => <Office
+                    key={ofc.name}
+                    name={ofc.name}
+                    online={ofc.online}
+                    waiting={ofc.waiting}
+                    elapsed={ofc.elapsed}
+                />)
+            }
         </OfficesListContainer>
     )
 }
@@ -18,8 +35,14 @@ const OfficesListContainer = styled.div`
     gap: 10px;
     margin: 30px auto;
     width: 97%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
+    display: grid;
+    @media (min-width: 470px){
+        grid-template-columns: 1fr 1fr ;
+    }
+    @media (min-width: 700px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (min-width: 964px){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 `
