@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 
 function StopDiv() {
-    const [step1, setStep1] = useState(false);
-    const [step2, setStep2] = useState(true);
+    const [step1, setStep1] = useState(true);
+    const [step2, setStep2] = useState(false);
     const [step3, setStep3] = useState(false);
 
 
@@ -78,8 +78,8 @@ const FilterState = styled.div`
     .div{
         z-index: 10;
         background-color:red;
-        width: 75px;
-        height: 27px;
+        width: 76px;
+        height: 32px;
         text-align: center;
         border-radius: 3px;
         box-shadow: inset 0 1px rgb(255 255 255 / 50%), 0 0 2px rgb(0 0 0 / 20%);
@@ -87,8 +87,8 @@ const FilterState = styled.div`
             color: white;
             font-size: 15px;
             font-weight: 700;
-            opacity: .8;
-            margin-top: 2px;
+            opacity: .9;
+            margin-top: 5px;
         }
     }
 `
@@ -108,6 +108,6 @@ const DivOff = styled.div`
         font-size: 15px;
         font-weight: 600;
         opacity: .35;
-        margin-top: 2px;
+        margin-top: 5px;
     }
 `

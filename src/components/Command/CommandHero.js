@@ -27,7 +27,8 @@ export default CommandHero
 const HeroContainer = styled.div`
     height: 100%;
     overflow-x:hidden;
-    max-width: 1285px;
+    max-width: 1280px;
+    width: 94%;
     position: relative;
     padding: 17px 15px;
     color: white;
@@ -43,6 +44,14 @@ const HeroContainer = styled.div`
     font-size: 14px;
     @media (max-width: 1141px) {
         margin: -10px auto;
+    }
+    @media (max-width: 556px) {
+        margin: -10px auto;
+        width: 90%;
+    }
+    @media (max-width: 432px) {
+        margin: -10px auto;
+        width: 88%;
     }
 
 `

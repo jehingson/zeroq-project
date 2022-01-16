@@ -15,7 +15,7 @@ function Hero({ Icon, title, color, stope }) {
                 </>
                 : <>
                     <div style={{ background: '#1d2f57' }}>
-                        <Icon style={{ width: '20px', height: '20px' }} />
+                        <Icon style={{ width: '20px', height: '20px', }} />
                     </div>
                     <h5>{title}</h5>
                 </>
@@ -45,6 +45,8 @@ const HeroIcons = styled.div`
     }
     >h5{
         margin-left: 10px;
+        font-size: 14px;
+        font-weight: 400;
     }
 
 `

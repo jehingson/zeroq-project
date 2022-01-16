@@ -18,7 +18,7 @@ function Command() {
         <CommandContainer>
             <ContentSearch>
                 <Search />
-                <input placeholder="" />
+                <input placeholder="Buscar Sucursales" />
             </ContentSearch>
             <ContentFilter>
                 <FormControl>
@@ -53,7 +53,6 @@ function Command() {
             </ContentFilter>
 
             <ContentState>
-
                 <StopDiv />
                 <ColorButton variant="contained">ASIGNAR SLA</ColorButton>
             </ContentState>
@@ -78,6 +77,7 @@ const CommandContainer = styled.div`
 const ContentSearch = styled.div`
     width: 320px;
     height: 40px;
+    border-radius: 3px;
     display:flex;
     align-items: center;
     background: white;
@@ -93,6 +93,8 @@ const ContentSearch = styled.div`
         color: #444;
         font-weight: 500;
         line-height: 21px;
+        height:33px;
+        width:83%;
     }
 `
 
