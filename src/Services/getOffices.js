@@ -21,7 +21,22 @@ export default async function getOffices({ search = '', step = '' }) {
                 const minutes = Math.floor(elapsed / 60);
                 const seconds = elapsed % 60;
                 result.waiting = waiting
-                result.elapsed = `${parseInt(hours)}:${parseInt(minutes)}:${parseInt(seconds)}`
+                result.elapsed = hours ?
+                    `${parseInt(hours)}:${parseInt(minutes)}:${parseInt(seconds)}` :
+                    `${parseInt(minutes)}:${parseInt(seconds)}`
+                if (!hours) {
+                    if (minutes < 20) {
+                        if (minutes < 15) {
+                            result.color = "#00B886"
+                        } else {
+                            result.color = "#E9AB48"
+                        }
+                    } else {
+                        result.color = "#F36A5A"
+                    }
+                } else {
+                    result.color = "#F36A5A"
+                }
             })
             // sort from online a offline
             data.sort((a, b) => b.online - a.online)

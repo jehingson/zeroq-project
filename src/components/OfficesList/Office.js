@@ -4,15 +4,17 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
-function Office({ name, online, waiting, elapsed }) {
+function Office({ name, online, waiting, elapsed, color }) {
     const [on, setOn] = useState(online)
+
+    console.log('color', color)
 
     const handleClick = () => {
         setOn((prev) => !prev)
     }
 
     return (
-        <OfficeContainer online={on} onClick={handleClick}>
+        <OfficeContainer online={on} color={color} onClick={handleClick}>
             <h2>{name}</h2>
             <div>
                 <div><PersonOutlineOutlinedIcon /> <p>{waiting}</p> </div>
@@ -41,7 +43,7 @@ cursor: pointer;
     >div{
         display: flex;
         padding: 5px 20px 5px 20px;
-        background-color:  ${props => !props.online ? "#999F9B" : "#00B886"};
+        background-color:  ${props => !props.online ? "#999F9B" : props.color};
         gap: 20%;
         >div{
             display: flex;

@@ -19,6 +19,7 @@ function OfficesList() {
                         online={ofc.online}
                         waiting={ofc.waiting}
                         elapsed={ofc.elapsed}
+                        color={ofc.color}
                     />)
                     : (<Loaging />)
             }
