@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import { useOffices } from '../../Hooks/useOffices';
 import Loaging from '../Utils/Loaging';
@@ -37,6 +37,7 @@ const OfficesListContainer = styled.div`
     margin: 30px auto 20px auto;
     width: 97%;
     display: grid;
+    padding-bottom: 23px;
     @media (min-width: 470px){
         grid-template-columns: 1fr 1fr ;
     }
