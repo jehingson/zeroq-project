@@ -35,11 +35,18 @@ MIT
 ![Arquitectur de Zeroq](.readme-static/vsco.png)
 
 - App.js inicializa el proyecto
-- Creamos un state global a traves ee context/OfficesContext.js
+- Creamos un state global a traves en context/OfficesContext.js
 - getOffices el unicon endpoind a usar he iterar en Services/getOffices.js
 - Filtra por nombre y por stop offline y online
-
-
+- Cambio de  estado de la oficina alternando entre offline, online y todos
+  
 
 # Diseño response
 ![Catura de Zeroq mobil](.readme-static/respon_orign.png)
+
+
+
+# TEMAS RELACIONADO DE MI AUTORÍA
+- [clone de MercadoLibre](https://www.youtube.com/watch?v=U5qGUF62kmc&t=182s)
+- [clone de Linkendin](https://www.youtube.com/watch?v=N6QnD9O0aFQ&t=1419s)
+- [clone de Tweeter](https://www.youtube.com/watch?v=ZNUrVPLbCfw)
