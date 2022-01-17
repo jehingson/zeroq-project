@@ -21,9 +21,6 @@ git clone.
 - `npm run build` compilador build
 
 
-# Diseño response
-![Catura de Zeroq mobil](.readme-static/respon_orign.png)
-
 ## Redes sociales Jehingson Pernia
 ## Youtube
 - youtube 
@@ -33,3 +30,10 @@ git clone.
 
 ## Licencia
 MIT
+
+# Aqutectura
+![Arquitectur de Zeroq](.readme-static/vsco.png)
+
+
+# Diseño response
+![Catura de Zeroq mobil](.readme-static/respon_orign.png)
