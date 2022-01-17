@@ -7,6 +7,7 @@ import OfficesList from './components/OfficesList';
 import Header from './components/Header';
 import StaticContext from './Context/StatacContext'
 import { OfficesContextProvider } from './Context/OfficesContext'
+import FooterCommand from './components/Footer/FooterCommand';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/" exact>
                   <Header />
                   <OfficesList />
+                  <FooterCommand />
                 </Route>
               </OfficesContextProvider>
             </Switch>

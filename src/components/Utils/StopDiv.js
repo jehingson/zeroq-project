@@ -6,8 +6,8 @@ import OfficesContext from '../../Context/OfficesContext'
 
 function StopDiv() {
     const { setStep } = useContext(OfficesContext)
-    const [step1, setStep1] = useState(true);
-    const [step2, setStep2] = useState(false);
+    const [step1, setStep1] = useState(false);
+    const [step2, setStep2] = useState(true);
     const [step3, setStep3] = useState(false);
 
     useEffect(() => {

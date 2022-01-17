@@ -23,21 +23,24 @@ export default async function getOffices({ search = '', step = '' }) {
                 result.waiting = waiting
                 result.elapsed = `${parseInt(hours)}:${parseInt(minutes)}:${parseInt(seconds)}`
             })
+            // sort from online a offline
             data.sort((a, b) => b.online - a.online)
+            // filter search name
             if (
                 search.length
                 && search !== ' '
                 && search !== '  ') {
-                data = data.filter((itm) => itm.name === search)
+                data = data.filter((itm) => itm.name.includes(search))
             }
+            // filter state online
             if (step === 'online') {
                 data = data.filter((itm) => itm.online)
             }
+            // filter state offline
             if (step === 'offline') {
                 data = data.filter((itm) => !itm.online)
             }
         }
-        console.log('sss', data)
         return data
     }
     return []

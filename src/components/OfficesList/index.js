@@ -12,13 +12,15 @@ function OfficesList() {
     return (
         <OfficesListContainer>
             {
-                offices.map(ofc => <Office
-                    key={ofc.name}
-                    name={ofc.name}
-                    online={ofc.online}
-                    waiting={ofc.waiting}
-                    elapsed={ofc.elapsed}
-                />)
+                offices.length ?
+                    offices.map(ofc => <Office
+                        key={ofc.name}
+                        name={ofc.name}
+                        online={ofc.online}
+                        waiting={ofc.waiting}
+                        elapsed={ofc.elapsed}
+                    />)
+                    : (<Loaging />)
             }
         </OfficesListContainer>
     )
@@ -31,7 +33,7 @@ const OfficesListContainer = styled.div`
     overflow-x:hidden;
     max-width:1280px;
     gap: 10px;
-    margin: 30px auto;
+    margin: 30px auto 20px auto;
     width: 97%;
     display: grid;
     @media (min-width: 470px){
