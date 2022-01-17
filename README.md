@@ -34,6 +34,12 @@ MIT
 # Aqutectura
 ![Arquitectur de Zeroq](.readme-static/vsco.png)
 
+- App.js inicializa el proyecto
+- Creamos un state global a traves ee context/OfficesContext.js
+- getOffices el unicon endpoind a usar he iterar en Services/getOffices.js
+- Filtra por nombre y por stop offline y online
+
+
 
 # Diseño response
 ![Catura de Zeroq mobil](.readme-static/respon_orign.png)
